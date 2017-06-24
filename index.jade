@@ -1,0 +1,760 @@
+doctype html
+html
+  head
+    title The quest for insights, the true objective of big data
+    meta(charset='utf-8')
+    meta(name='author', content='John Alexis Guerra Gomez')
+    meta(name='description', content='The quest for insights, the true objective of big data')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+    //- link(href='lib/css/reveal.css', rel='stylesheet')
+    //- link(href='lib/css/theme/simple.css', rel='stylesheet')
+    //- link(href='lib/css/zenburn.css', rel='stylesheet')
+    link(href='style.css', rel='stylesheet')
+    //- Printing and PDF exports -->
+    script.
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'lib/css/print/pdf.css' : 'lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    script(src='lib/js/d3.min.js')
+    script(src='lib/js/bumpChartPhotos.js')
+  body
+    .reveal
+      .slides
+        section#title
+          h1 The quest for insights,
+          h2 the true objective of big data
+          p
+            a(href='http://johnguerra.co/', target='_blank') John Alexis Guerra Gómez
+            br
+            a(href='http://twitter.com/duto_guerra') @duto_guerra
+          p.small Use
+            strong  spacebar
+            |  and the arrows to advance slides
+          p.small
+            a(href='http://infovis.co/bigDataQuest', target='_blank') http://infovis.co/bigDataQuest
+          //- p.small
+          //-   a(href='http://www.cientificosdedatos.com', target='_blank') http://www.cientificosdedatos.com
+
+        section#outline
+          h2 Outline
+          ol
+            li Who am I?
+            li What is Big Data?
+            li How to process/store it?
+            li How to make sense of it?
+
+
+        //- ------------------------WHOAMI----------------------
+
+        section#whoamI
+          section
+            h1 Who am I?
+
+          section
+            //- h2 Ingeniero de sistemas y computación UTP
+            img(src="images/Pereira.jpg")
+
+          section#IRIS
+            img(src="images/IRIS_y_su_caja_peq.png")
+
+          section#KebSolutions
+            img(src="images/logo_keb.png")
+
+          section#Fulbright
+            img(src="images/fulbright.png")
+
+          section#Doctorado
+            h1 PhD
+
+          section#HCIL
+            img(src="images/Ben_and_Catherine.jpg")
+
+          section
+            iframe.blocks(src="https://cdn.rawgit.com/mbostock/4063582/raw/dd152a94f98ab7081a41096a88ece375e64a8b6c/index.html")
+
+          section
+            img(src="images/lifelines.jpg")
+
+          section
+            img(src="images/lifeflow.png")
+
+          section
+            img(src="images/2012_08_20_paxs_overview_september_01.png")
+
+          section
+            img(src="images/treeversity_v2.png")
+
+          section
+            //- img(src="images/2013_03_29_Budget_2013_Reporting2.png")
+
+          section
+            img(src="images/2013_04_29_eBay.png")
+
+          section
+            img(src="images/13CaseStudies.png")
+
+          section
+            h2 Silicon Valley
+            //- img(src="images/mapaCalifornia.png")
+
+          section
+            img(src="images/parc_rgb.png")
+
+          section
+            img.demo(src="images/topics_steamchart_with_wordclouds.png")
+
+
+
+          section
+            img(src="images/labs_us_purple_1000px_wide.png")
+
+          //- section
+          //-   img(src="images/Flickr.png")
+
+          section
+            img(src="images/christmass.png")
+
+          section
+            img(src="images/FlickrPopular.png")
+
+          section
+            img(src="images/topPhotos.png")
+
+          section
+            img(src="images/photoRing.png")
+
+
+          //- section
+          //-   img(src="images/GeoExplorer.png")
+
+          //- section
+          //-   h2 Many other projects
+
+          //- section
+          //-   img(src="images/TradeFlow.png")
+
+          //- section
+          //-   img(src="images/Tweetometro.png")
+
+          //- section
+          //-   img(src="images/Wholikesmyfb.png")
+
+          //- section
+          //-   iframe.blocks(src="https://cdn.rawgit.com/john-guerra/4db5024e00a82f10a2dc/raw/1c7d368565d6c59dc9608dc5e792786616c26aff/index.html")
+          //-   //- img(src="images/ForceColombia.png")
+
+          //- section
+          //-   img(src="images/MapaColombia.png")
+
+          //- section
+          //-   img(src="images/VIT.png")
+
+          //- section
+          //-   img(src="images/QueCarroComprar.png")
+
+
+        //- ------------------WHAT'S BIG DATA----------------------
+
+        section#whatIsBigData
+          section
+            h1 What is Big Data?
+
+          section
+            h2 You might have heard of the Vs of Big Data
+            ul
+              li.fragment Volume
+              li.fragment Velocity
+              li.fragment Variety
+              li.fragment and Veracity and Value
+              li.fragment Too ambiguous!! Let's go beyond that
+
+          section
+            h2 How Big is big?
+            p.fragment Can you fit it in one computer?
+            p.fragment Yes? -> Then is not really big
+            p.fragment Let's call it big data only if it doesn't fit on one computer (and has the 3Vs)
+
+          section
+            h2 Why this criteria?
+            p.fragment Because if it fits in one computer you don't need all the overhead of big data technologies, just use a traditional relational database.
+
+          section
+            img(src="images/datafit1.svg")
+          section
+            img(src="images/datafit2.svg")
+
+          section
+            h2 Example: photo collection
+            ul
+              li.fragment One photo -> 10MB
+              li.fragment 1k photos in a cellphone -> 10MB * 1k = 10000MB = 10GB
+              li.fragment 50k photos in your computer -> 10MB * 50k = 500GB
+              li.fragment Is that big data?
+              li.fragment No, you can fit that in one cheap external hard drive
+              //- li.fragment BTW, Flickr gives you 1000GB (1TB) for free
+
+          section
+            h2 Problem: count how many blue photos in my collection?
+            p How do you compute this?
+            p.fragment Put all your photos in one computer
+            p.fragment Go through all the collection and count
+
+          section
+            img(src="images/datafit_processing.svg")
+
+
+          section
+            h2 Flickr size
+            p 80+ trillion photos (80'''000''000'000.000)
+            p.fragment That's big data
+
+          section
+            h2 How many blue photos on Flickr?
+            p How do you compute this?
+            p.fragment Distribute the data among hundreds of thousand of computers (a cluster).
+            p.fragment Compute subtotals on each chunk of the data. (Map)
+            p.fragment Aggregate the subtotals into one big total. (Reduce)
+
+
+          section
+            img(src="images/dont_fit.svg")
+          section
+            img(src="images/dont_fit2.svg")
+          section
+            img(src="images/dont_fit_blocks.svg")
+          section
+            img(src="images/dont_fit_blocks_distributed.svg")
+          section
+            img(src="images/map_reduce.svg")
+
+          section
+            h2 How many computers do you need?
+            p.fragment total / one computer capacity?
+            p.fragment What if one computer breaks down?
+            p.fragment We need redundancy -> Each photo is stored in many computers
+            p.fragment How do we control versions? How to keep records? What goes where?
+            p.fragment
+              strong That's why we need big data!!
+
+          section
+            img(src="images/redundancy.svg")
+
+
+          section#Technologies
+            h2 Technologies
+            ul
+              li.fragment MapReduce (Hadoop, Hive, pig, Spark ...)
+              li.fragment NoSQL Databases (Redis, Cassandra, MongoDB, Neo4J)
+              li.fragment Distributed Relational (SQL) Databases (MySQL, PostgreSQL, Oracle, SqlServer)
+              li.fragment Many others
+
+          section
+            h2 Hadoop
+            ul
+              li Computing platform for big data
+              li Uses clusters for storing and processing the data
+
+          section
+            h2 Hadoop Architecture
+            img(src="images/Hadoop Architecture.svg")
+
+
+          section
+            h2 Spark
+            p A distributed computing alternative of to map reduce.
+            ul
+              li Easier to use
+              li Integrates better with traditional programming models
+
+          section
+            h2 NoSQL Databases
+            ul
+              li Scalable storage platforms that use techniques different to traditional SQL databases
+              li Sacrifices features for performance
+
+          section
+            h2 Types of NoSQL
+            ul
+              //- #[a(href="https://en.wikipedia.org/wiki/Apache_Cassandra") Cassandra]
+              li.fragment Column Oriented: Cassandra, HBase, Redshift ...
+              li.fragment Key-value: Redis, memcached, Aerospike ....
+              li.fragment Document based: MongoDB, CouchDB, DynamoDB ...
+              li.fragment Graph based: Neo4J, Titan, ...
+
+          section
+            h2 Bonus
+            p #[a(href="https://vimeo.com/156305374") Introduction to NoSQL for Web Developers]
+
+          section
+            h2 Distributed Relational DB
+            ul
+              li You can also use traditional databases on a distributed way.
+              li Divides the database into shards.
+              li Usually doesn't scale that well.
+
+
+          section
+            h2 Others
+            ul
+              li Google #[a(href="https://cloud.google.com/dataflow/") DataFlow]
+              li Google's replacement for MapReduce based on flows.
+              li Supposed to scale better.
+              li AFAIK can only be used with Google's Cloud.
+
+
+
+
+        //- ------------------HOW TO MAKE SENSE----------------------
+
+        section#howToMakeSense
+          section
+            h1 Making sense
+          section
+            h2 How to make sense of it?
+            ul
+              li.fragment Statistical Analysis
+              li.fragment Machine Learning and Artificial Intelligence
+              li.fragment Visual Analytics (and data analytics)
+
+          section
+            h3 Data Mining/Machine Learning
+            p: img(src='images/machine_learning_diagram.png')
+          section
+            h3 Information Visualization
+            p: img(src='images/infovis_diagram.png')
+          section
+            h3 Infovis + Algorithms
+            p: img(src='images/infovis_algorithms_diagram.png')
+          section
+            table#comparisonTable
+              tr
+                td.fragment
+                  h2 Traditional
+                  ul
+                    li Query for known patterns
+                    li Display results using  traditional techniques
+                  br
+                  strong Pros:
+                  br
+                  ul
+                    li Many solutions
+                    li Easier to implement
+                  br
+                  strong Cons:
+                  br
+                  ul
+                    li Can’t search for the unexpected
+
+                td.fragment
+                  h2 Data Mining/ML
+                  ul
+                    li Based on statistics
+                    li Black box approach
+                    li Output outliers and correlations
+                    li  Human out of the loop
+                  br
+                  strong Pros:
+                  br
+                  ul
+                    li  Scalable
+                  br
+                  strong Cons:
+                  ul
+                    li  Analysts have to make sense of the results
+                    li  Makes assumptions on the data
+
+                td.fragment
+                  h2 InfoVis
+                  ul
+                    li  Visual Interactive Interfaces
+                    li  Human in the loop
+                  br
+                  strong Pros:
+                  br
+                  ul
+                    li  Visual bandwidth is enormous
+                    li  Experts decided what to search for
+                    li  Identify unknown patterns and errors in the data
+                  br
+                  strong Cons
+                  br
+                  ul
+                    li Scalability can be an issue
+          section
+            h2 Why should we visualize?
+
+          section
+            h2 Anscombe's quartet
+            img(src="images/anscombes.jpg")
+
+          section
+            h2 Anscombe's quartet
+            img(src="images/anscombes2.jpg")
+
+          section
+            h2 Anscombe's visualized
+            img(src="images/anscombes_graph.jpg")
+
+          section
+            h2 In Infovis we look for #[strong Insights]
+            ul
+              li.fragment Deep understanding
+              li.fragment Meaningful
+              li.fragment Non obvious
+              li.fragment Actionable
+
+          section
+            h2 How do I do it?
+            img.demo(src="images/My skills.png")
+
+          section#BuscandoInsights
+            h2 What do I use?
+            img.demo(src="images/What I use.png")
+
+
+        section
+          section
+            h1 Insights
+
+          section#InsightFDA
+            h2 FDA
+            p Task: Change in drug's adverse effects reports
+            p User: FDA Analysts
+
+          section
+            h2 State of the art
+            img.demo(src="images/sectorMap_drug1.png")
+
+          section
+            img.demo(src="images/sectorMaps.png")
+
+          section
+            img(src="images/skylines_explanation.png")
+
+
+          section
+            a(href="https://treeversity.cattlab.umd.edu/?hierarchy=soc/hlgt/hlt/pt&db=tv2_sectorMaps6&seqFrom=01/01/08&seqTo=01/01/12&viz=Skylines&fixedHierarchy=soc/hlgt/hlt/pt&valueAttrib=ebgm&title=FDA%20Adverse%20Drug%20Effects" target="_blank")
+              img(src="images/2013_03_29_FDA_all.png")
+            a(href="https://treeversity.cattlab.umd.edu/") https://treeversity.cattlab.umd.edu/
+
+
+
+          section#InsightPARC
+            h2 Health insurance claims
+            p Task: Detect fraud networks
+            p User: Undisclosed Analysts
+
+          section
+            img.demo(src="images/network_explorer_before.png")
+
+
+          section
+            h2 Clustering
+            //- img(src="images/.jpg")
+            iframe.blocks(src="https://cdn.rawgit.com/john-guerra/ecdde32ab4ad91a1a240/raw/2c1a843df8631604a99140ddc9db8ee048624a79/index.html")
+
+          section
+            h2 Force in a box
+            iframe.blocks(src="https://cdn.rawgit.com/john-guerra/14c943d8f198d9f3fef2/raw/320474d468321d00f3241609a125c8d37935474b/index.html")
+
+          section
+            h2 Overview
+            img.demo(src="images/overview_10k_nointer_cropped.png")
+
+          section
+            h2 Ego distance
+            img.demo(src="images/network_explorer_ego_distance.png")
+
+
+          section#InsightTweetometro
+            h2 Tweetometro
+            p Task: Twitter behavior during Presidential Elections
+            p User: Me
+
+          section
+            iframe.blocks(src="http://tweetometro.co" alt="images/tweetometro.png")
+            a(href="http://tweetometro.co") http://tweetometro.co
+
+          section
+            h2 Normal tweets
+            img.demo(src="http://tweetometro.co/img/all_tweets_May_25_2014.png")
+
+          section
+            h2 Weird tweets?
+            img.demo(src="http://tweetometro.co/img/suspicious_tweets_May_25_2014.png")
+
+          section
+            h2 Creation dates
+            img.demo(src="http://tweetometro.co/img/user_creation_date_May_25_2014.png")
+
+          section
+            h2 Number of followers
+            img.demo(src="http://tweetometro.co/img/num_followers_May_25_2014.png")
+
+          section
+            span.
+              <script type='text/javascript' src='http://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1032px; height: 677px;'><noscript><a href='http:&#47;&#47;tweetometro.co&#47;robots_May25.html'><img alt='Análisis Elecciones Presidenciales Colombia ' src='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;An&#47;AnlisisPosiblesRobotsEleccionesColombiaMay25&#47;AnlisisEleccionesPresidencialesColombia&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1032' height='677' style='display:none;'><param name='host_url' value='http%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='AnlisisPosiblesRobotsEleccionesColombiaMay25&#47;AnlisisEleccionesPresidencialesColombia' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;An&#47;AnlisisPosiblesRobotsEleccionesColombiaMay25&#47;AnlisisEleccionesPresidencialesColombia&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>
+
+          section#InsightCars
+            h2 What car to buy?
+            p Task: What's the best car to buy?
+            p User: Me
+
+          section
+            h2 Normal procedure
+            p Ask friends and family
+
+          section#Renault4
+            span.
+              <a data-flickr-embed="true"  href="https://www.flickr.com/photos/synx508/8083533370/in/photolist-djjdR1-afaxQE-88rrWV-85GG7C-dhdprm-cB1GP1-6T5Y57-bwHLJo-kCowWc-q7ohL2-pZdWRQ-aqbuDd-CwU436-8Eruxo-nzoa7c-BzobPh-ptWmt6-BYoC9H-81RCdE-dPuGGx-q4JtAk-7XXciZ-r1UjFV-iKrUr5-iEmCiG-pcraD8-fNGpSf-fNGpFd-cN7xp-7SC3f9-D3mfHj-dhdpZ8-nzh5GD-85GGwL-5wBWcW-7tCm5D-8RDcp9-7kBmch-afaxQJ-8RA446-9z4AuX-6B9YeE-9ZVygr-7SC3f5-e3sALe-6B5Zon-apFGuQ-a6gMVY-5wVRyj-7pJkMr" title="Renault 4"><img src="https://c3.staticflickr.com/9/8055/8083533370_a0597b2b89_b.jpg" width="1024" height="683" alt="Renault 4"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+          section#Renault4Pimped
+            span.
+              <a data-flickr-embed="true"  href="https://www.flickr.com/photos/zenzak35/14225528098/" title="Renault 4 JP4"><img src="https://c3.staticflickr.com/4/3909/14225528098_f77d8393ac_b.jpg" width="1024" height="576" alt="Renault 4 JP4"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+
+          section#Renault4Crashed
+            span.
+              <a data-flickr-embed="true"  href="https://www.flickr.com/photos/95012335@N02/16327150369/in/photolist-qSLUYz-p8zsEJ-fHL1jE-4grA8b-8YBfrt-8mRG7n-49vZ6h-dXiuZG-kseXjY-CpB1rB-kCp4NF-75n5c9-8PiBKZ-5999UC-C5Lz5Y-eBWbNx-eBEvp-fBpDP7-nF4xTQ-8spzYg-a7ovQd-4r1u5g-aPE45k-7R62M3-dZQnYp-djjdR1-afaxQE-88rrWV-85GG7C-dhdprm-cB1GP1-6T5Y57-bwHLJo-kCowWc-q7ohL2-pZdWRQ-aqbuDd-CwU436-8Eruxo-nzoa7c-BzobPh-ptWmt6-BYoC9H-81RCdE-dPuGGx-q4JtAk-7XXciZ-r1UjFV-iKrUr5-iEmCiG" title="Teilgefalteter Renault 4 am Strassenrand"><img src="https://c2.staticflickr.com/8/7437/16327150369_c5a839efab_b.jpg" width="1024" height="681" alt="Teilgefalteter Renault 4 am Strassenrand"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
+          section
+            h2 Problem
+            p That's inferring statistics from a sample n=1
+
+          section
+            h2 Better approach
+            p Data based decisions
+
+          section
+            img(src="images/tucarro.png")
+            a(href="http://tucarro.com") http://tucarro.com
+
+          section
+            iframe.blocks(src="http://infovis.co/carrosUsados/todosPuntos.html")
+
+          section
+            iframe.blocks(src="http://infovis.co/carrosUsados/depreciacionMarcas.html")
+
+          section
+            iframe.blocks(src="http://infovis.co/carrosUsados/depreciacionesCarros.html")
+
+
+          //- section
+          //-   h1 Visual Analytics en Wingz
+
+          //- section
+          //-   img.demo(src="images/PriceDeviation.png")
+          //-   p Insight: Estamos comprando a precios no competitivos
+
+          //- section
+          //-   img.demo(src="images/Venta media la 94.png")
+          //-   p Insight: Generalmente el domingo se vende más, en todos menos en el restaurante de la 94
+
+
+          //- section
+          //-   img(src="images/vendedores_robando_blurred.png")
+          //-   p Insight: Tenemos vendedores tomando aprovechándo las falencias del sistema
+
+          //- section
+          //-   img(src="images/vendedores_robando2_blurred.png")
+          //-   p Insight: Tenemos vendedores tomando aprovechándo las falencias del sistema
+
+          //- section
+          //-   img(src="images/clientes.png")
+          //-   p Insight: Tenemos clientes VIP desatendidos
+
+          //- section
+          //-   img(src="images/ventas_por_hora_dia.png")
+          //-   p Insight: No todas las horas del día son iguales
+
+          //- section
+          //-   img(src="images/vendedores_productos.png")
+          //-   p Analítica: ¿Qué vendedores venden más ciertos productos?
+
+          //- section
+          //-   img(src="images/clientes.png")
+          //-   p Analítica: ¿Cuáles son los productos favoritos de nuestros clientes?
+
+
+
+
+        section
+          h2 Take home message
+          ul
+            li.fragment Big data? Sure, If it doesn't fit on a computer
+            li.fragment Finding #[strong insights], that's what matters
+            li.fragment #[strong Visual Analytics], a good way of finding insights
+
+        section#end
+          h1 Thank You
+          h2 Questions?
+          div.contactInfo
+            p John Alexis Guerra Gómez
+            a(href="http://johnguerra.co") johnguerra.co
+            br
+            a(href="http://twitter.com/duto_guerra") @duto_guerra
+
+
+
+        section#Bonus
+          h1 Bonus
+
+        //- --------------------- Types of visualization
+
+        section#typesOfVisualization
+          section
+            h2 Types of Visualization
+            ul
+              li Infographics
+              li Scientific Visualization (sciviz)
+              li Information Visualization (infovis, datavis)
+
+          section
+            h3 Infographics
+            img(src="images/infographics.png")
+
+          section
+            h3 Scientific Visualization
+            ul
+              li Inherently spatial
+              li 2D and 3D
+            p: img(src="images/sciviz.png")
+
+          section
+            h3 Information Visualization
+            img(src="images/infovis_examples.png")
+
+          section
+            h2 Infovis Basics
+          section
+            h2 Visualization Mantra
+            ul
+              li Overview first
+              li Zoom and Filter
+              li Details on Demand
+          section#munznerstyle
+            iframe(width='100%', height='500px', scrolling='no', frameborder='no', src= "munzner.html")
+
+          section#munznerpreference
+            h2 Perception Preference
+            div#munznerpreferencechart
+            script.
+              myBumpChart = bumpChartPhotos()
+              .x(function (d) { return d.dataType; })
+              .y(function (d) { return d.position; })
+              .key(function (d) { return d.attribute; })
+              .label(function (d) { return d.attribute; })
+              .width(900)
+              .height(400);
+              //- img(src="images/munzner_preference.png", height="400px")
+
+              d3.json("munzner_preference.json", function (err, data) {
+                var procData =[];
+                data.forEach(function (c) {
+                  c.preference.forEach(function (p, i) {
+                    procData.push({
+                      "dataType":c.type,
+                      "position":i,
+                      "attribute":p
+                    });
+                  });
+                });
+
+                d3.select("#munznerpreferencechart")
+                  .datum(procData)
+                  // .style("height", timelineHeight + "px")
+                  .call(myBumpChart);
+
+              });
+
+            p.small Adapted from from:
+             a(href="http://www.cs.ubc.ca/labs/imager/tr/2009/VisChapter/akp-vischapter.pdf", target='_blank') Tamara Munzner Book Chapter
+
+          section#dataTypes
+            section
+              h2 Data Types
+              table.small
+                tr
+                  td: strong 1-D Linear
+                  td Document Lens, SeeSoft, Info Mural
+                tr
+                  td: strong  2-D Map
+                  td GIS, ArcView, PageMaker, Medical imagery
+                tr
+                  td: strong  3-D World
+                  td CAD, Medical, Molecules, Architecture
+                tr
+                  td: strong  Multi-Var
+                  td Spotfire, Tableau, GGobi, TableLens, ParCoords,
+                tr
+                  td: strong  Temporal
+                  td LifeLines, TimeSearcher, Palantir, DataMontage, LifeFlow
+                tr
+                  td: strong  Tree
+                  td Cone/Cam/Hyperbolic, SpaceTree, Treemap, Treeversity
+                tr
+                  td: strong  Network
+                  td Gephi, NodeXL, Sigmajs
+
+
+        //- //- ----------- Cómo lo hago
+        //- section
+        //-   section
+        //-     h2 Traditional Data Science
+        //-     img.demo(src="images/Traditional Data Science.png")
+
+        //-   section
+        //-     h2 Visual Analytics
+        //-     img.demo(src="images/Visual Analytics.png")
+
+
+
+    script(src='lib/js/head.min.js')
+    script(src='lib/js/reveal.js')
+
+    script.
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+          // Interpret Markdown in <section> elements
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+          // Syntax highlight for <code> elements
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+          // Zoom in and out with Alt+click
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+
+          // Speaker notes
+          { src: 'plugin/notes/notes.js', async: true },
+
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: 'plugin/remotes/remotes.js', async: true },
+
+          //- // MathJax
+          //- { src: 'plugin/math/math.js', async: true }
+        ]
+      });
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50178794-5', 'auto');
+      ga('send', 'pageview');
+
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://mbostock.github.io/d3/talk/20111116/munzner.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link type="text/css" rel="stylesheet" href="./munzner_files/style.css">
+    <style type="text/css">
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  width: 400px;
+  overflow: hidden;
+}
+
+li.hidden {
+  opacity: .1;
+}
+
+li span {
+  position: relative;
+  color: #1f77b4;
+  font-size: 24px;
+}
+
+li span div {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .5em;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Visualization ⊂ Data Graphics</h1>
+    <h2 style="font-size:20px;"><i>Information Visualization:<br>Principles, Methods, and Practice</i><br>Tamara Munzner<br>
+      <span style="font-size:12px;">Taken from <a href="http://mbostock.github.io/d3/talk/20111116/#4">http://mbostock.github.io/d3/talk/20111116/#4</a></span></h2>
+    <p>
+    </p>
+    <div style="position:absolute;left:50%;">
+      <b>Visual Channels</b>
+      <ul id="encodings">
+        <li id="position" class="">position <span><div style="width: 140px;"><svg width="140" height="24"><path d="M0.5,19V10V14.5H139.5V10V19" style="fill: none; stroke: black;"></path><circle cx="10" cy="14.5" r="5.5" style="fill: rgb(31, 119, 180); stroke: white; stroke-width: 1.5px;"></circle><circle cx="20" cy="14.5" r="5.5" style="fill: rgb(31, 119, 180); stroke: white; stroke-width: 1.5px;"></circle><circle cx="50" cy="14.5" r="5.5" style="fill: rgb(31, 119, 180); stroke: white; stroke-width: 1.5px;"></circle><circle cx="80" cy="14.5" r="5.5" style="fill: rgb(31, 119, 180); stroke: white; stroke-width: 1.5px;"></circle><circle cx="120" cy="14.5" r="5.5" style="fill: rgb(31, 119, 180); stroke: white; stroke-width: 1.5px;"></circle></svg></div></span></li>
+        <li id="length" class="">length <span><div style="width: 4px;"><svg width="4" height="24"><rect y="5" width="4" height="19" style="fill: rgb(31, 119, 180);"></rect></svg></div><div style="width: 6px;"><svg width="6" height="24"><rect y="5" width="6" height="19" style="fill: rgb(31, 119, 180);"></rect></svg></div><div style="width: 10px;"><svg width="10" height="24"><rect y="5" width="10" height="19" style="fill: rgb(31, 119, 180);"></rect></svg></div><div style="width: 16px;"><svg width="16" height="24"><rect y="5" width="16" height="19" style="fill: rgb(31, 119, 180);"></rect></svg></div><div style="width: 24px;"><svg width="24" height="24"><rect y="5" width="24" height="19" style="fill: rgb(31, 119, 180);"></rect></svg></div></span></li>
+        <li id="area" class="">area <span><div style="width: 4px;"><svg width="4" height="24"><circle cx="2" cy="12" r="2" style="fill: rgb(31, 119, 180);"></circle></svg></div><div style="width: 6px;"><svg width="6" height="24"><circle cx="3" cy="12" r="3" style="fill: rgb(31, 119, 180);"></circle></svg></div><div style="width: 10px;"><svg width="10" height="24"><circle cx="5" cy="12" r="5" style="fill: rgb(31, 119, 180);"></circle></svg></div><div style="width: 16px;"><svg width="16" height="24"><circle cx="8" cy="12" r="8" style="fill: rgb(31, 119, 180);"></circle></svg></div><div style="width: 24px;"><svg width="24" height="24"><circle cx="12" cy="12" r="12" style="fill: rgb(31, 119, 180);"></circle></svg></div></span></li>
+        <li id="angle" class="">angle <span><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(0,12)" d="M7.347880794884119e-16,-12A12,12 0 0,1 7.730612246852292,-9.178106247413861L2.576870748950764,-3.0593687491379535A4,4 0 0,0 2.4492935982947064e-16,-4Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(0,12)" d="M7.347880794884119e-16,-12A12,12 0 0,1 9.760986057472484,-6.980197073566602L3.253662019157495,-2.326732357855534A4,4 0 0,0 2.4492935982947064e-16,-4Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(0,12)" d="M7.347880794884119e-16,-12A12,12 0 0,1 11.912555892451062,-1.4460332324083986L3.970851964150354,-0.4820110774694662A4,4 0 0,0 2.4492935982947064e-16,-4Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(0,12)" d="M7.347880794884119e-16,-12A12,12 0 0,1 9.701956845835081,7.062013407064152L3.2339856152783604,2.3540044690213837A4,4 0 0,0 2.4492935982947064e-16,-4Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(0,12)" d="M7.347880794884119e-16,-12A12,12 0 1,1 -0.7004897211309618,11.979537309537037L-0.2334965737103206,3.9931791031790125A4,4 0 1,0 2.4492935982947064e-16,-4Z" style="fill: rgb(31, 119, 180);"></path></svg></div></span></li>
+        <li id="shape" class="">shape <span><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(12,12)" d="M0,5.641895835477563A5.641895835477563,5.641895835477563 0 1,1 0,-5.641895835477563A5.641895835477563,5.641895835477563 0 1,1 0,5.641895835477563Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(12,12)" d="M-6.708203932499369,-2.23606797749979H-2.23606797749979V-6.708203932499369H2.23606797749979V-2.23606797749979H6.708203932499369V2.23606797749979H2.23606797749979V6.708203932499369H-2.23606797749979V2.23606797749979H-6.708203932499369Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(12,12)" d="M0,-9.306048591020996L5.372849659117709,0 0,9.306048591020996 -5.372849659117709,0Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(12,12)" d="M-5,-5L5,-5 5,5 -5,5Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(12,12)" d="M0,6.580370064762462L7.598356856515926,-6.580370064762462 -7.598356856515926,-6.580370064762462Z" style="fill: rgb(31, 119, 180);"></path></svg></div><div style="width: 12px;"><svg width="12" height="24"><path transform="translate(12,12)" d="M0,-6.580370064762462L7.598356856515926,6.580370064762462 -7.598356856515926,6.580370064762462Z" style="fill: rgb(31, 119, 180);"></path></svg></div></span></li>
+        <li id="hue" class="">hue <span><div><svg width="24" height="24"><rect y="5" x="3" width="19" height="19" style="fill: rgb(31, 119, 180);"></rect></svg></div><div><svg width="24" height="24"><rect y="5" x="3" width="19" height="19" style="fill: rgb(255, 127, 14);"></rect></svg></div><div><svg width="24" height="24"><rect y="5" x="3" width="19" height="19" style="fill: rgb(44, 160, 44);"></rect></svg></div><div><svg width="24" height="24"><rect y="5" x="3" width="19" height="19" style="fill: rgb(214, 39, 40);"></rect></svg></div><div><svg width="24" height="24"><rect y="5" x="3" width="19" height="19" style="fill: rgb(148, 103, 189);"></rect></svg></div></span></li>
+        <li id="connection" class="">connection <span><div style="width: 140px;"><svg width="140" height="24"><defs><marker id="arrow" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,-5L10,0L0,5" style="fill: rgb(31, 119, 180);"></path></marker></defs><circle cy="14.5" cx="7" r="4.5"></circle><circle cy="14.5" cx="67" r="4.5"></circle><path d="M14,14.5H61" marker-end="url(#arrow)" style="fill: none; stroke: rgb(31, 119, 180); stroke-width: 2px;"></path></svg></div></span></li>
+      </ul>
+    </div>
+    <div>
+      <b>Data Types</b>
+      <ul id="types">
+        <li id="categorical" class="">categorical <span>apple, orange</span></li>
+        <li id="ordinal">ordinal <span>small, large</span></li>
+        <li id="quantitative">quantitative <span>5-9 cm</span></li>
+        <li id="relational" class="">relational <span>a → b</span></li>
+        <li id="spatial" class="">spatial <span>37.8°N, 122.5°W</span></li>
+      </ul>
+    </div>
+    <script type="text/javascript" src="./munzner_files/d3.js"></script>
+    <script type="text/javascript">
+
+// Argh, Chrome 15's stupid iframe SVG bug!
+
+var position = d3.select("#position").append("span").append("div")
+    .style("width", "140px")
+  .append("svg:svg")
+    .attr("width", 140)
+    .attr("height", 24);
+
+position.append("svg:path")
+    .attr("d", "M0.5,19V10V14.5H139.5V10V19")
+    .style("fill", "none")
+    .style("stroke", "black");
+
+position.selectAll("circle")
+    .data([1, 2, 5, 8, 12])
+  .enter()  .append("svg:circle")
+    .attr("cx", function(d) { return d * 10; })
+    .attr("cy", 14.5)
+    .attr("r", 5.5)
+    .style("fill", "#1f77b4")
+    .style("stroke", "white")
+    .style("stroke-width", "1.5px");
+
+var length = d3.select("#length").append("span").selectAll("div")
+    .data([2, 3, 5, 8, 12])
+  .enter().append("div")
+    .style("width", function(d) { return d * 2 + "px"; })
+  .append("svg:svg")
+    .attr("width", function(d) { return d * 2; })
+    .attr("height", 24);
+
+length.append("svg:rect")
+    .attr("y", 5)
+    .attr("width", function(d) { return d * 2; })
+    .attr("height", 19)
+    .style("fill", "#1f77b4");
+
+var area = d3.select("#area").append("span").selectAll("div")
+    .data([2, 3, 5, 8, 12])
+  .enter().append("div")
+    .style("width", function(d) { return d * 2 + "px"; })
+  .append("svg:svg")
+    .attr("width", function(d) { return d * 2; })
+    .attr("height", 24);
+
+area.append("svg:circle")
+    .attr("cx", Number)
+    .attr("cy", 12)
+    .attr("r", Number)
+    .style("fill", "#1f77b4");
+
+var arc = d3.svg.arc()
+    .innerRadius(4)
+    .outerRadius(12)
+    .startAngle(0)
+    .endAngle(Number);
+
+var angle = d3.select("#angle").append("span").selectAll("div")
+    .data([2, 3, 5, 8, 12].map(function(d) { return .2 + d / 4; }))
+  .enter().append("div")
+    .style("width", "12px")
+  .append("svg:svg")
+    .attr("width", 12)
+    .attr("height", 24);
+
+angle.append("svg:path")
+    .attr("transform", "translate(0,12)")
+    .attr("d", arc)
+    .style("fill", "#1f77b4");
+
+var shape = d3.select("#shape").append("span").selectAll("div")
+    .data(d3.svg.symbolTypes)
+  .enter().append("div")
+    .style("width", "12px")
+  .append("svg:svg")
+    .attr("width", 12)
+    .attr("height", 24);
+
+shape.append("svg:path")
+    .attr("transform", "translate(12,12)")
+    .attr("d", d3.svg.symbol().type(String).size(100))
+    .style("fill", "#1f77b4");
+
+var hue = d3.select("#hue").append("span").selectAll("div")
+    .data([2, 3, 5, 8, 12])
+  .enter().append("div")
+  .append("svg:svg")
+    .attr("width", 24)
+    .attr("height", 24);
+
+hue.append("svg:rect")
+    .attr("y", 5)
+    .attr("x", 3)
+    .attr("width", 19)
+    .attr("height", 19)
+    .style("fill", d3.scale.category10());
+
+var connection = d3.select("#connection").append("span").append("div")
+    .style("width", "140px")
+  .append("svg:svg")
+    .attr("width", 140)
+    .attr("height", 24);
+
+connection.append("svg:defs").append("svg:marker")
+    .attr("id", "arrow")
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 10)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5")
+    .style("fill", "#1f77b4");
+
+connection.selectAll("circle")
+    .data([7, 67])
+  .enter().append("svg:circle")
+    .attr("cy", 14.5)
+    .attr("cx", Number)
+    .attr("r", 4.5);
+
+connection.append("svg:path")
+    .attr("d", "M14,14.5H61")
+    .attr("marker-end", "url(#arrow)")
+    .style("fill", "none")
+    .style("stroke", "#1f77b4")
+    .style("stroke-width", 2);
+
+var encodingsByType = {
+  categorical: {position: 1, shape: 1, hue: 1},
+  ordinal: {position: 1, length: 1, area: 1, angle: 1},
+  quantitative: {position: 1, length: 1, area: 1, angle: 1},
+  relational: {position: 1, connection: 1},
+  spatial: {position: 1}
+};
+
+var typesByEncoding = {
+  position: {categorical: 1, ordinal: 1, quantitative: 1, relational: 1, spatial: 1},
+  length: {ordinal: 1, quantitative: 1},
+  area: {ordinal: 1, quantitative: 1},
+  angle: {ordinal: 1, quantitative: 1},
+  shape: {categorical: 1},
+  hue: {categorical: 1},
+  connection: {relational: 1}
+};
+
+d3.selectAll("#types li")
+    .map(function() { return this.id; })
+    .on("mouseover.show", show(encodingsByType))
+    .on("mouseout.show", showAll);
+
+d3.selectAll("#encodings li")
+    .map(function() { return this.id; })
+    .on("mouseover.show", show(typesByEncoding))
+    .on("mouseout.show", showAll);
+
+function show(ids) {
+  return function(id) {
+    d3.selectAll("li").classed("hidden", function(d) {
+      return d != id && !(d in ids[id]);
+    });
+  };
+}
+
+function showAll() {
+  d3.selectAll("li").classed("hidden", false);
+}
+
+    </script>
+
+
+<!-- <div id="window-resizer-tooltip" style="display: block;"><a href="http://mbostock.github.io/d3/talk/20111116/munzner.html#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1680</span> x <span class="tooltipHeight" id="winHeight">991</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1680</span> x <span class="tooltipHeight" id="vpHeight">852</span></div>
+ --></body></html>

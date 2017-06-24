@@ -1,0 +1,13 @@
+[{
+	"type":"Qualitative",
+	"preference":["Position","Length","Angle","Slope","Area","Volume", "Lightness","Saturation","Hue","Texture","Connection","Containment","Shape"]
+},
+{
+	"type":"Ordered",
+	"preference":["Position","Lightness","Saturation","Hue","Texture","Connection","Containment","Length","Angle","Slope","Area","Volume","Shape"]
+},
+{
+	"type":"Categorical",
+	"preference":["Position","Hue","Texture","Connection","Containment","Lightness","Saturation","Shape","Length","Angle","Slope","Area","Volume"]
+}
+]

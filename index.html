@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Machine Learning</title>
+    <meta charset="utf-8">
+    <meta name="author" content="John Alexis Guerra Gomez">
+    <meta name="description" content="The quest for insights, the true objective of big data">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="style.css" rel="stylesheet">
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'lib/css/print/pdf.css' : 'lib/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <script src="lib/js/d3.min.js"></script>
+    <script src="lib/js/bumpChartPhotos.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="title">
+          <h1>Harness the true power of Machine Learning</h1>
+          <br>
+          <p>A presentation by the FOSS Club MEC.</p>
+        </section>
+
+        <section id="outline">
+          <h2>Outline</h2>
+          <ol>
+            <li>What is FOSS?</li>
+            <li>How I got into Open Source.</li>
+          </ol>
+        </section>
+
+        <section id="whatisfoss">
+          <section>
+            <h1>What Is FOSS?</h1>
+            <img src="images/penguin.jpg">
+          </section>
+          <section>
+            <h3>The term free software refers to a lack of restrictions on individual users as well as zero cost; the term open source software refers to collaborative or networked development. FOSS, which embraces the benefits and adherents of both paradigms, is gaining widespread acceptance as traditional modes of software design are challenged.</h3>
+          </section>
+          <section>
+            <h1>The legend of the black box.</h1>
+          </section>
+          <section>
+            <img src="images/terminal.jpg" style="border-radius: 20px; width:auto; height:400px">
+            <h4>Fun Fact: This is a windows command line. But the most used system in the world is Linux, around 90% of all the computers run one or the other form of Linux</h4>
+          </section>
+          <section>
+            <p style="font-size: 50px">Linux, or the first Open Source project ever is currently used today to build other Open Source projects and is one of the most needed tool for building software. Knowing to work with the terminal is the prime skill needed for developers. Not only Linux but even Windows and Macs have their own Command Line but the Linux terminal is the most powerful.</p>
+          </section>
+          <section>
+            <ol>
+              <li>
+                <p style="font-size: 50px">Sometimes referred to as the command screen or a text interface, the command line or Windows command line is a user interface that is navigated by typing commands at prompts, instead of using the mouse.</p>
+              </li>
+              <li>
+                <p style="font-size: 50px">You can do whatever you normally do on the Graphical interface through the command line</p>
+              </li>
+            </ol>
+          </section>
+          <section>
+            <h1>Git and Github.</h1>
+            <img src="images/git.png">
+          </section>
+          <section>
+            <p style="font-size: 40px">Git and Github are other tools by which is used to build all kinds of Open Source Software. Esentially, <i>Git</i> is the distributed version control system,whle <b>GitHub</b> is a company that provides Git repository hosting (a location to store your work). It acts as a medium to host projects online and collaborate with other developers on developing the same projects. </p> 
+	    <p>You can visit online github website to find a plethora of projects, but to contribute to one, you have to learn the command line and to use git within the command line(git can be installed or used on the website, though twe recommend the former). Currently there are over 21 million projects Open Source on Github</p>
+          </section>
+          <section>
+            <h2>What is Git?</h2>
+            <img src="images/tree on github.png">
+          </section>
+          <section>
+            <p>Think of Git as a public park, with an entry and an exit from the other side. Being public, anyone can visit. Though there is a main path through the park, one has the liberty to take a side lane, explore what nature has to offer! Maybe come up with a change or two? Make it a better place, and return back to the main path, knowing that you have contributed. So the next one to step in will see from the main path how much more scenic has it become over all. When multiple people make small contributions,it leads to major upgrades in the standards. BUt what if someone made an unecessary change? NO problem! The park has a (virtual) history tracker, and lets you return to it's former state.</p>
+          </section>
+	  <section>
+	    <p>The Park is your project, being public meant open sourced, while the visitors were us! The memebers making changes to enhance our project. And all this is can be visualised as a tree changes that happen, thanks to Git.</p>
+   	    <p>Yet, it is quite a mystery what unix means by this:</p>
+	    <img src="images/man git.png">
+	  </section>
+          <section>
+            <h2>GitHub is the platform we use to execute Git online</h2> 
+             <img src="images/git repository.png">
+	     <p>We store our repositories in their drive, thus having an online back-up area. There are other websites to do the same (BucketGit for instance), but we prefer to use Github for its simple outline and user friendly interface.</p> 
+          </section>
+          <section>
+            <p>Just like the public park analogy, Github is open sourced in the sense that anyone can fork(keep a copy in self-account), clone(download to edit), and merge if acceptable(to perfect the work), thus fostering the ideals we have of FOSS</p>
+          </section>
+        </section>
+
+        <section id="getinto">
+          <section>
+            <h1>How I got into Open Source.</h1>
+          </section>
+          <section>
+            <h2>You might have heard of the Vs of Big Data</h2>
+            <ul>
+              <li class="fragment">Volume</li>
+              <li class="fragment">Velocity</li>
+              <li class="fragment">Variety</li>
+              <li class="fragment">and Veracity and Value</li>
+              <li class="fragment">Too ambiguous!! Let's go beyond that</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Fill with details.</h1>
+          </section>
+        </section>
+        <section id="getintoFOSS">
+        <section>
+          <h1>How do I get into FOSS?</h1>
+        </section>
+        <section>
+          <h2>What is GSOC?</h2>
+            <li >
+              <p style="font-size: 45px">Google Summer of Code is a global program focused on bringing more student developers into open source software development.The program invites students who meet their eligibility criteria to post at most 5 applications that detail the software-coding project they wish to work on. These applications are then evaluated by the corresponding mentoring organization.
+              </p>
+            </li>
+        </section>
+        <section>
+          <h2>Benefits of GSOC</h2>
+          <ul>
+            <li class="fragment">
+              <b>Community</b>
+              <p>Helps you in networking and gaining contacts. A lot of people also work in good startups and companies, which might be of interest for future employment.</p>
+            </li>
+            <li class="fragment">
+              <b>Career</b>
+              <p>Google Summer of Code is quite competitive. The fact that you were selected demonstrates an above average skill level, which acts positively when you are looking for jobs. Also, the fact that it is Google administered also adds a cherry to the top. So, companies do pay attention to this.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <ul>
+            <li>
+              <b>Chance with Google itself</b>
+              <p>One time referral given to Google Summer of Code students can be used for a possible job opportunity at Google itself. Several people have been contacted by Google post their GSoC and offered internships/jobs.</p>
+            </li>
+            <li class="fragment">
+              <b>Stipend</b>
+              <p>Google pays a really competitive stipend.</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Finding the right Open Source Organization</h2>
+          <ul>
+          <li>
+            <p>GSoC or any other open source contribution is about interacting with a community of like-minded people and contributing along with them to a common cause.Find an organization that works in an area that you are interested.</p>
+          </li>
+          <li>
+            <p>Look for projects in your area of interest (app development, AI, networking etc.) and choose the one that matches your skill set.</p>
+          </li>
+          <li>
+            <p>spend some time learning and implementing a mini project in that area, and once you feel more comfortable, then start looking for open-source projects in your area of interest.</p>
+          </li>
+          </ul>
+        </section>
+        <section>
+        <h2>Tools used for Open Source Development</h2>
+        <ul>
+          <li class="fragment">
+            <b>Communication Channels</b>
+            <p>Most open source organizations use mailing lists/Internet Relay Chat to communicate with each other, as not all working on the project are in proximity. IRC or Internet Relay Chat is a giant chat room for a community that can have one or hundreds of users. It is a great way for someone to pose a general question and for anyone to answer the question versus sending email to one person directly.</p>
+          </li>
+        </ul>
+        </section>
+        <section>
+        <ul>
+            <li>
+              <b>Version Control Systems</b>
+              <p>A version control system (also known as a Revision Control System) is a repository of files, often the files for the source code of computer programs, with monitored access. Every change made to the source is tracked, along with who made the change, why they made it, and references to problems fixed, or enhancements introduced, by the change.</p>
+              <p><b>Git</b> and <b>Mercurial</b> are the leading distributed Version Control Systems.</p>
+            </li>
+        </ul>
+        </section>
+        <section>
+        <ul>
+          <li>
+            <b>Bug Tracking Systems</b>
+            <p>A bug tracking system or defect tracking system is a software application, which keeps track of reported software bugs in software development projects. The time a bug was reported, its severity, details on how to reproduce the bug and the erroneous program behaviour gets recorded in a database, which is the major component of a bug tracking system.</p> 
+            <p><b>Bugzilla</b> and <b>Mantis</b> Bug Tracker are the commonly used bug tracking systems.</p>
+          </li>
+        </ul>
+        </section>
+        </section>
+        <section id="gitandgithub">
+          <section>
+            <h1>more</h1>
+          </section>
+          <section>
+            <h2>How to make sense of it?</h2>
+            <ul>
+              <li class="fragment">Statistical Analysis</li>
+              <li class="fragment">Machine Learning and Artificial Intelligence</li>
+              <li class="fragment">Visual Analytics (and data analytics)</li>
+            </ul>
+          </section>
+          <section>
+            <h1>Fill with details.</h1>
+          </section>
+        </section>
+
+        <section id="webdevelopment">
+          <section>
+            <h1>more</h1>
+          </section>
+          <section>
+            <h1>Fill with details.</h1>
+          </section>
+        </section>
+        <section>
+          <h1>Thank You.</h1>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="lib/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        rollingLinks: true,
+        transition: "convex",
+        //- width: "90%",
+        //- height: 1.0,
+        dependencies: [
+          // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      
+          // Interpret Markdown in <section> elements
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+          // Syntax highlight for <code> elements
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      
+          // Zoom in and out with Alt+click
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+      
+          // Speaker notes
+          { src: 'plugin/notes/notes.js', async: true },
+      
+          //- // Remote control your reveal.js presentation using a touch device
+          //- { src: 'plugin/remotes/remotes.js', async: true },
+      
+          //- // MathJax
+          //- { src: 'plugin/math/math.js', async: true }
+        ]
+      });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-50178794-5', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
